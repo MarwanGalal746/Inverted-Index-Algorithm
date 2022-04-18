@@ -12,16 +12,16 @@ public class Main {
         public static void app() {
             InvertedIndex index = new InvertedIndex();
             index.AddDocs(new ArrayList<String>(List.of("100.txt", "526.txt", "527.txt")));
-            //index.printPostingsList();
+//            index.printPostingsList();
             System.out.println("Query1: ");
             index.Query("Ehab and Labib");
-//            System.out.println("-----------------------------------------------------");
-//            System.out.println("Query2: ");
-//            index.Query("software or not computing or first");
-//            System.out.println("-----------------------------------------------------");
-//            System.out.println("Query3: ");
-//            index.Query("development or not computing ");
-//            System.out.println("-----------------------------------------------------");
+            System.out.println("-----------------------------------------------------");
+            System.out.println("Query2: ");
+            index.Query("software or first");
+            System.out.println("-----------------------------------------------------");
+            System.out.println("Query3: ");
+            index.Query("not computing");
+            System.out.println("-----------------------------------------------------");
 
         }
     }

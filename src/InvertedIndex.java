@@ -40,6 +40,7 @@ public class InvertedIndex {
         while (counter<q.size()) {
             String operator = "";
             if (first) {
+                first = false;
                 if (q.get(counter).equals("not")) {
                     operand = this.not(postingsList.get(q.get(1)));
                     counter += 2;
@@ -98,7 +99,6 @@ public class InvertedIndex {
         int i = 0, r = 0;
         for (; i < list1.size() && r < list2.size(); ) {
             if (list1.get(i).compareTo(list2.get(r)) == 0) {
-                System.out.println("gg");
                 result.add(list2.get(r));
                 i++;
                 r++;
