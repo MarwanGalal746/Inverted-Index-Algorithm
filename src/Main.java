@@ -10,8 +10,18 @@ public class Main {
 
     static class App {
         public static void app() {
-            InvertedIndex index = new InvertedIndex(new ArrayList<String>(List.of("100.txt")));
-            index.AddDocs(new ArrayList<String>(List.of("100.txt")));
+            InvertedIndex index = new InvertedIndex();
+            index.AddDocs(new ArrayList<String>(List.of("100.txt", "526.txt", "527.txt")));
+            //index.printPostingsList();
+            System.out.println("Query1: ");
+            index.Query("Ehab and Labib");
+//            System.out.println("-----------------------------------------------------");
+//            System.out.println("Query2: ");
+//            index.Query("software or not computing or first");
+//            System.out.println("-----------------------------------------------------");
+//            System.out.println("Query3: ");
+//            index.Query("development or not computing ");
+//            System.out.println("-----------------------------------------------------");
 
         }
     }
