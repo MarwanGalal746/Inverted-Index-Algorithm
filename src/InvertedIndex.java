@@ -11,6 +11,14 @@ public class InvertedIndex {
 
     public void AddDocs(ArrayList<String> docs) {
         tokenizingAndSorting(docs.get(0));
+
+        for (Map.Entry<String, ArrayList<String>> entry : this.postingsArray.entrySet()) {
+            System.out.print(entry.getKey() + "/ " );
+            for (int i=0 ; i< entry.getValue().size() ; i++)
+                System.out.print(entry.getValue().get(i));
+            System.out.println();
+        }
+
     }
 
     private void tokenizingAndSorting(String file) {
@@ -29,7 +37,6 @@ public class InvertedIndex {
                             this.postingsArray.get(word).add(file);
                         }
                     }
-                    this.postingsArray.put(tokenizer.nextToken(), new ArrayList<String>());
                 }
             }
             myReader.close();

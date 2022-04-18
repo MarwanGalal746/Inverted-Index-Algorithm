@@ -1,20 +1,18 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-//        System.out.println("Hello world!");
-//        InvertedIndex index = new InvertedIndex();
-//        index.AddDocs( );
+        App.app();
+    }
 
-//        HashMap<Integer, String> map=new HashMap<Integer,String>();//Creating HashMap
-//        map.put(2, "2");
-//        map.put(1, "1");
-//        for (Map.Entry<Integer, String> entry : map.entrySet()) {
-//            System.out.println(entry.getKey() + "/" + entry.getValue());
-//        }
+    static class App {
+        public static void app() {
+            InvertedIndex index = new InvertedIndex();
+            index.AddDocs(new ArrayList<String>(List.of("100.txt")));
 
+        }
     }
 }
