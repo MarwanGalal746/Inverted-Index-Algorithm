@@ -10,7 +10,7 @@ public class Main {
 
     static class App {
         public static void app() {
-            InvertedIndex index = new InvertedIndex();
+            InvertedIndex index = new InvertedIndex(new ArrayList<String>(List.of("100.txt")));
             index.AddDocs(new ArrayList<String>(List.of("100.txt")));
 
         }

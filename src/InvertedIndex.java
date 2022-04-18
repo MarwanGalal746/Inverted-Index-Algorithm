@@ -4,9 +4,11 @@ import java.util.*;
 
 public class InvertedIndex {
     private HashMap<String, ArrayList<String>> postingsList;
+    private ArrayList<String> allDocs;
 
-    public InvertedIndex() {
+    public InvertedIndex(ArrayList<String> allDocs) {
         this.postingsList = new HashMap<>();
+        this.allDocs = allDocs;
     }
 
     public void printPostingsList() {
@@ -78,19 +80,12 @@ public class InvertedIndex {
         return result;
     }
 
-    private ArrayList<String> not(ArrayList<String> list1, ArrayList<String> list2) {
+    private ArrayList<String> not(ArrayList<String> list) {
         ArrayList<String> result = new ArrayList<String>();
-        int i = 0, r = 0;
-        for (; i < list1.size() && r < list2.size(); ) {
-            if (list1.get(i) == list2.get(r)) {
-                i++;
-                r++;
-            } else if (list1.get(i).compareTo(list2.get(r)) < 0){
-                result.add(list1.get(i));
-                i++;
+        for (int i =0 ; i<this.allDocs.size() ; i++) {
+            if (!list.contains(allDocs.get(i))) {
+                result.add(allDocs.get(i));
             }
-            else
-                r++;
         }
         return result;
     }
